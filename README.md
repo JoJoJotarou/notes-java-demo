@@ -1,2 +1,2 @@
 # notes-java-demo
-mynotes-java-demo
+my notes java demo
