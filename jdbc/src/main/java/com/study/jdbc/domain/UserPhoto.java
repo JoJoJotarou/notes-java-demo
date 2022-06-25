@@ -1,11 +1,9 @@
 package com.study.jdbc.domain;
 
-import java.sql.Blob;
-
 public class UserPhoto {
     private Integer id;
     private String name;
-    private Blob photo;
+    private byte[] photo;
 
     public Integer getId() {
         return id;
@@ -23,11 +21,11 @@ public class UserPhoto {
         this.name = name;
     }
 
-    public Blob getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Blob photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 

@@ -1,5 +1,6 @@
 package com.study.jdbc;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -116,11 +117,11 @@ public class PreparedStatementTest {
                 UserPhoto user = new UserPhoto();
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
-                user.setPhoto(rs.getBlob("photo"));
+                user.setPhoto(rs.getBytes("photo"));
                 System.out.println(user);
 
                 // 下载
-                is = user.getPhoto().getBinaryStream();
+                is = new ByteArrayInputStream(user.getPhoto());
                 // 下载到项目根目录
                 fos = new FileOutputStream("download.jpg");
                 // 下载到 resources 目录
